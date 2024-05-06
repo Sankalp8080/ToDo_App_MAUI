@@ -7,40 +7,101 @@
              xmlns:input="clr-namespace:InputKit.Shared.Controls;assembly=InputKit.Maui"
              xmlns:validation="clr-namespace:InputKit.Shared.Validations;assembly=InputKit.Maui"
 >
-    <StackLayout>
+    <ScrollView>
 
         <Grid Margin="20">
             <Grid.RowDefinitions>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+               
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition/>
+                <ColumnDefinition />
             </Grid.ColumnDefinitions>
 
-            <Image Source="todo.pmg" HorizontalOptions="Center" Grid.Row="0" Grid.ColumnSpan="2" HeightRequest="60" WidthRequest="300"/>
-            <Image Source="bg.png" HeightRequest="300" WidthRequest="300" Grid.Row="1"  Grid.ColumnSpan="2" HorizontalOptions="CenterAndExpand"/>
-            <input:FormView Grid.Row="2" Grid.ColumnSpan="2" Spacing="10">
-                <input:AdvancedEntry Title="UserName or Email Id" Grid.Row="3" Grid.ColumnSpan="2"   BackgroundColor="Transparent">
-                    <input:AdvancedEntry.Validations>
-                        <validation:RequiredValidation Message="Please Enter Username or Email Id"></validation:RequiredValidation>
-                    </input:AdvancedEntry.Validations>
-                </input:AdvancedEntry>
-                <input:AdvancedEntry Title="Password" IsPassword="True" Grid.Row="4"   Grid.ColumnSpan="2" BackgroundColor="Transparent">
-                    <input:AdvancedEntry.Validations>
-                        <validation:RequiredValidation Message="Please Enter Password"></validation:RequiredValidation>
-                    </input:AdvancedEntry.Validations>
-                </input:AdvancedEntry>
-                <Button input:FormView.IsSubmitButton="True" Text="Login" Grid.Row="5" Grid.ColumnSpan="2" Margin="15" WidthRequest="120"></Button>
-            </input:FormView>
-            <Label Text="Create a new account" Grid.Row="6" Grid.Column="2" HorizontalOptions="End" Margin="5"></Label>
+            <Image Source="todo.png" HorizontalOptions="Center" Grid.Row="0" Grid.ColumnSpan="2" MaximumHeightRequest="60" MaximumWidthRequest="300"/>
+            <Image Source="bg.png" MaximumHeightRequest="400" Aspect="AspectFill"  MaximumWidthRequest="400" Grid.Row="1"  Grid.ColumnSpan="2" HorizontalOptions="CenterAndExpand">
+                
+            </Image>
+
+            <Frame x:Name="loginFrame" BackgroundColor="White" CornerRadius="31" HeightRequest="400" Margin="0,20,0,0" HasShadow="True" TranslationY="-23" BorderColor="Transparent" VerticalOptions="FillAndExpand" Grid.Row="2" Grid.ColumnSpan="2">
+                <Grid RowDefinitions="auto,auto,auto,auto,auto,auto">
+                    <Label Text="Login" TextColor="#6a7efc" HorizontalOptions="Center" FontSize="24" Grid.Row="0" Grid.ColumnSpan="2" FontAttributes="Bold"></Label>
+                    <input:FormView Grid.Row="1" Grid.ColumnSpan="2" Spacing="15" >
+                        <input:AdvancedEntry Title="UserName or Email Id" Grid.Row="2" Grid.ColumnSpan="2" Spacing="10" BackgroundColor="Transparent">
+                            <input:AdvancedEntry.Validations>
+                                <validation:RequiredValidation Message="Please Enter Username or Email Id"></validation:RequiredValidation>
+                            </input:AdvancedEntry.Validations>
+                        </input:AdvancedEntry>
+                        <input:AdvancedEntry Title="Password" IsPassword="True" Grid.Row="3" Spacing="10"  Grid.ColumnSpan="2" BackgroundColor="Transparent">
+                            <input:AdvancedEntry.Validations>
+                                <validation:RequiredValidation Message="Please Enter Password"></validation:RequiredValidation>
+                            </input:AdvancedEntry.Validations>
+                        </input:AdvancedEntry>
+                        <Button input:FormView.IsSubmitButton="True" Text="Login" FontSize="16" Grid.Row="4" Grid.ColumnSpan="2" Margin="15" WidthRequest="120"></Button>
+                    </input:FormView>
+                    <Label Text="Create a new account" Grid.Row="5" Grid.Column="2" HorizontalOptions="End" Margin="5" TextDecorations="Underline" TextColor="#6a7efc">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped">                                
+                            </TapGestureRecognizer>
+                        </Label.GestureRecognizers>
+                    </Label>
+                </Grid>
+                <Frame.Shadow>
+                    <Shadow Opacity="0.9"></Shadow>
+                </Frame.Shadow>
+            </Frame>
+
+            <Frame x:Name="signupFrame" BackgroundColor="White" CornerRadius="31" Margin="0,20,0,0" IsVisible="False" HasShadow="True" TranslationY="-23" BorderColor="Transparent" VerticalOptions="FillAndExpand" Grid.Row="2" Grid.ColumnSpan="2">
+                <Grid RowDefinitions="auto,auto,auto,auto,auto,auto,auto,auto,auto">
+                    <Label Text="Sign Up" TextColor="#6a7efc" HorizontalOptions="Center" FontSize="24" Grid.Row="0" Grid.ColumnSpan="2" FontAttributes="Bold"></Label>
+                    <input:FormView Grid.Row="1" Grid.ColumnSpan="2" Spacing="15" >
+                        <input:AdvancedEntry Title="UserName" Grid.Row="2" Grid.ColumnSpan="2" Spacing="10" BackgroundColor="Transparent">
+                            <input:AdvancedEntry.Validations>
+                                <validation:RequiredValidation Message="Please Enter Username"></validation:RequiredValidation>
+                            </input:AdvancedEntry.Validations>
+                        </input:AdvancedEntry>
+                        <input:AdvancedEntry Title="Email Id" Grid.Row="3" Grid.ColumnSpan="2" Spacing="10" BackgroundColor="Transparent">
+                            <input:AdvancedEntry.Validations>
+                                <validation:RequiredValidation Message="Please Enter Email Id"></validation:RequiredValidation>
+                            </input:AdvancedEntry.Validations>
+                        </input:AdvancedEntry>
+                        <input:AdvancedEntry Title="First Name" Grid.Row="4" Grid.ColumnSpan="2" Spacing="10" BackgroundColor="Transparent">
+                            <input:AdvancedEntry.Validations>
+                                <validation:RequiredValidation Message="Please Enter First Name"></validation:RequiredValidation>
+                            </input:AdvancedEntry.Validations>
+                        </input:AdvancedEntry>
+                        <input:AdvancedEntry Title="Last Name" Grid.Row="5" Grid.ColumnSpan="2" Spacing="10" BackgroundColor="Transparent">
+                            <input:AdvancedEntry.Validations>
+                                <validation:RequiredValidation Message="Please Enter Last Name"></validation:RequiredValidation>
+                            </input:AdvancedEntry.Validations>
+                        </input:AdvancedEntry>
+                        <input:AdvancedEntry Title="Password" IsPassword="True" Grid.Row="6" Spacing="10"  Grid.ColumnSpan="2" BackgroundColor="Transparent">
+                            <input:AdvancedEntry.Validations>
+                                <validation:RequiredValidation Message="Please Enter Password"></validation:RequiredValidation>
+                            </input:AdvancedEntry.Validations>
+                        </input:AdvancedEntry>
+                        <input:AdvancedEntry Title="Confirm Password" IsPassword="True" Grid.Row="7" Spacing="10"  Grid.ColumnSpan="2" BackgroundColor="Transparent">
+                            <input:AdvancedEntry.Validations>
+                                <validation:RequiredValidation Message="Please Enter Password"></validation:RequiredValidation>
+                            </input:AdvancedEntry.Validations>
+                        </input:AdvancedEntry>
+                        <Button input:FormView.IsSubmitButton="True" FontSize="16" Text="Sign Up" Grid.Row="8" Grid.ColumnSpan="2" Margin="15" WidthRequest="120"></Button>
+                    </input:FormView>
+                    <Label Text="Already have a account" Grid.Row="9" Grid.Column="2" HorizontalOptions="End" Margin="5" TextDecorations="Underline" TextColor="#6a7efc">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1">
+                            </TapGestureRecognizer>
+                        </Label.GestureRecognizers>
+                    </Label>
+                </Grid>
+                <Frame.Shadow>
+                    <Shadow Opacity="0.9"></Shadow>
+                </Frame.Shadow>
+            </Frame>
         </Grid>
-    </StackLayout>
+    </ScrollView>
 
 </ContentPage>
