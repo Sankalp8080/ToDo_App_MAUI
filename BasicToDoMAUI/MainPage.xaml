@@ -1,0 +1,46 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BasicToDoMAUI.MainPage"
+             xmlns:ui="http://schemas.enisn-projects.io/dotnet/maui/uraniumui/material"
+             Title=""
+             Shell.NavBarIsVisible="False"
+             xmlns:input="clr-namespace:InputKit.Shared.Controls;assembly=InputKit.Maui"
+             xmlns:validation="clr-namespace:InputKit.Shared.Validations;assembly=InputKit.Maui"
+>
+    <StackLayout>
+
+        <Grid Margin="20">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Image Source="todo.pmg" HorizontalOptions="Center" Grid.Row="0" Grid.ColumnSpan="2" HeightRequest="60" WidthRequest="300"/>
+            <Image Source="bg.png" HeightRequest="300" WidthRequest="300" Grid.Row="1"  Grid.ColumnSpan="2" HorizontalOptions="CenterAndExpand"/>
+            <input:FormView Grid.Row="2" Grid.ColumnSpan="2" Spacing="10">
+                <input:AdvancedEntry Title="UserName or Email Id" Grid.Row="3" Grid.ColumnSpan="2"   BackgroundColor="Transparent">
+                    <input:AdvancedEntry.Validations>
+                        <validation:RequiredValidation Message="Please Enter Username or Email Id"></validation:RequiredValidation>
+                    </input:AdvancedEntry.Validations>
+                </input:AdvancedEntry>
+                <input:AdvancedEntry Title="Password" IsPassword="True" Grid.Row="4"   Grid.ColumnSpan="2" BackgroundColor="Transparent">
+                    <input:AdvancedEntry.Validations>
+                        <validation:RequiredValidation Message="Please Enter Password"></validation:RequiredValidation>
+                    </input:AdvancedEntry.Validations>
+                </input:AdvancedEntry>
+                <Button input:FormView.IsSubmitButton="True" Text="Login" Grid.Row="5" Grid.ColumnSpan="2" Margin="15" WidthRequest="120"></Button>
+            </input:FormView>
+            <Label Text="Create a new account" Grid.Row="6" Grid.Column="2" HorizontalOptions="End" Margin="5"></Label>
+        </Grid>
+    </StackLayout>
+
+</ContentPage>
