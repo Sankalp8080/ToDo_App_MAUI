@@ -1,4 +1,6 @@
-﻿namespace BasicToDoMAUI
+﻿using BasicToDoMAUI.Pages;
+
+namespace BasicToDoMAUI
 {
     public partial class App : Application
     {
@@ -6,7 +8,8 @@
         {
             InitializeComponent();
 
-            MainPage = new AppShell();
+             MainPage = new UserProfile();
+          
         }
     }
 }

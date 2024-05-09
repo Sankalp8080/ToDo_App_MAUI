@@ -4,12 +4,16 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:BasicToDoMAUI"
-    Shell.FlyoutBehavior="Disabled"
+    xmlns:pages="clr-namespace:BasicToDoMAUI.Pages"
+     
     Title="BasicToDoMAUI">
+    <FlyoutItem>
 
-    <ShellContent
+       
+        <ShellContent
         Title="Home"
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
+    </FlyoutItem>
 
 </Shell>

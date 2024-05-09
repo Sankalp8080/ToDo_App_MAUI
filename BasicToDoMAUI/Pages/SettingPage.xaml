@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BasicToDoMAUI.Pages.SettingPage"
+             xmlns:fa="clr-namespace:UraniumUI.Icons.FontAwesome;assembly=UraniumUI.Icons.FontAwesome"
+             Title="SettingPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Frame" x:Key="ProfileFrame">
+                <Setter Property="BackgroundColor" Value="#6a7efc"></Setter>
+                <Setter Property="HeightRequest" Value="200"></Setter>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ScrollView>
+
+        <Grid Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Frame Grid.Row="0" Style="{StaticResource ProfileFrame}" Grid.ColumnSpan="2">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="150"></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Frame CornerRadius="120" Grid.RowSpan="3" Grid.Column="0" WidthRequest="140" BackgroundColor="#f3f4f8">
+                        <Image Source="face.png" Aspect="AspectFit" HeightRequest="160" HorizontalOptions="Start" ></Image>
+                        <Frame.Shadow>
+                            <Shadow Opacity="0.9"></Shadow>
+                        </Frame.Shadow>
+                    </Frame>
+                    <Label Text="Hello," FontSize="Medium" FontAttributes="Bold" Grid.Row="0" TextColor="#f3f4f8" Grid.Column="1"></Label>
+                    <Label Text="ABC PQR" x:Uid="username" FontSize="Large" FontAttributes="Bold" Grid.Row="1" Grid.RowSpan="2" TextColor="#f3f4f8" Grid.Column="1"></Label>
+
+                </Grid>
+                <Frame.Shadow>
+                    <Shadow Opacity="0.9"></Shadow>
+                </Frame.Shadow>
+            </Frame>
+            
+             
+                
+                <Frame HeightRequest="100" BackgroundColor="Transparent"  Grid.Row="1" Grid.ColumnSpan="2" BorderColor="Transparent">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="40"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <ImageButton HeightRequest="50" HorizontalOptions="Start" Grid.Row="0" Grid.Column="0">
+                            <ImageButton.Source>
+                                <FontImageSource FontFamily="FASolid" Glyph="{x:Static fa:Solid.Gear}" Color="Black" ></FontImageSource>
+                            </ImageButton.Source>
+                        </ImageButton>
+                        <Label Grid.Column="1" Grid.Row="0" Text="Edit Profile" HorizontalOptions="Center" VerticalTextAlignment="Center" FontSize="Medium"></Label>
+                    </Grid>
+
+                </Frame>
+                <ImageButton HeightRequest="50" HorizontalOptions="Center" Grid.Row="3" Grid.ColumnSpan="2">
+                    <ImageButton.Source>
+                        <FontImageSource FontFamily="FASolid" Glyph="{x:Static fa:Solid.RightFromBracket}" Color="Black" ></FontImageSource>
+                    </ImageButton.Source>
+                </ImageButton>
+             
+            
+           
+        </Grid>
+    </ScrollView>
+</ContentPage>

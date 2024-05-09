@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BasicToDoMAUI.Pages.UserProfile"
+             Title="UserProfile"
+             xmlns:input="clr-namespace:InputKit.Shared.Controls;assembly=InputKit.Maui"
+xmlns:validation="clr-namespace:InputKit.Shared.Validations;assembly=InputKit.Maui">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Frame" x:Key="ProfileFrame">
+                <Setter Property="BackgroundColor" Value="#ec7495"></Setter>
+                <Setter Property="HeightRequest" Value="200"></Setter>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ScrollView>
+        <Grid Margin="20">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Frame Grid.Row="0" Style="{StaticResource ProfileFrame}" Grid.ColumnSpan="2">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                         
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Frame CornerRadius="120" Grid.RowSpan="2" Grid.Column="0" WidthRequest="140" BackgroundColor="#f3f4f8">
+                        <Image Source="facee.png" Aspect="AspectFit" HeightRequest="160" HorizontalOptions="Center" ></Image>
+                        <Frame.Shadow>
+                            <Shadow Opacity="0.9"></Shadow>
+                        </Frame.Shadow>
+                    </Frame>
+                    
+                </Grid>
+                <Frame.Shadow>
+                    <Shadow Opacity="0.9"></Shadow>
+                </Frame.Shadow>
+            </Frame>
+            <Frame x:Name="signupFrame" BackgroundColor="White" CornerRadius="31" Margin="0,-2"  HasShadow="True" TranslationY="-23" BorderColor="Transparent" VerticalOptions="FillAndExpand" Grid.Row="1" Grid.ColumnSpan="2">
+                <Grid RowDefinitions="auto,auto,auto,auto,auto,auto,auto,auto,auto">
+                    <Label Text="Edit Profile" TextColor="#ec7495" HorizontalOptions="Center" FontSize="24" Grid.Row="0" Grid.ColumnSpan="2" FontAttributes="Bold"></Label>
+                    <input:FormView Grid.Row="1" Grid.ColumnSpan="2" Spacing="15" >
+                        <input:AdvancedEntry Title="UserName" Grid.Row="2" Grid.ColumnSpan="2" Spacing="10" BackgroundColor="Transparent">
+                            <input:AdvancedEntry.Validations>
+                                <validation:RequiredValidation Message="Please Enter Username"></validation:RequiredValidation>
+                            </input:AdvancedEntry.Validations>
+                        </input:AdvancedEntry>
+                        <input:AdvancedEntry Title="Email Id" Grid.Row="3" Grid.ColumnSpan="2" Spacing="10" BackgroundColor="Transparent">
+                            <input:AdvancedEntry.Validations>
+                                <validation:RequiredValidation Message="Please Enter Email Id"></validation:RequiredValidation>
+                            </input:AdvancedEntry.Validations>
+                        </input:AdvancedEntry>
+                        <input:AdvancedEntry Title="First Name" Grid.Row="4" Grid.ColumnSpan="2" Spacing="10" BackgroundColor="Transparent">
+                            <input:AdvancedEntry.Validations>
+                                <validation:RequiredValidation Message="Please Enter First Name"></validation:RequiredValidation>
+                            </input:AdvancedEntry.Validations>
+                        </input:AdvancedEntry>
+                        <input:AdvancedEntry Title="Last Name" Grid.Row="5" Grid.ColumnSpan="2" Spacing="10" BackgroundColor="Transparent">
+                            <input:AdvancedEntry.Validations>
+                                <validation:RequiredValidation Message="Please Enter Last Name"></validation:RequiredValidation>
+                            </input:AdvancedEntry.Validations>
+                        </input:AdvancedEntry>
+                        <input:AdvancedEntry Title="Password" IsPassword="True" Grid.Row="6" Spacing="10"  Grid.ColumnSpan="2" BackgroundColor="Transparent">
+                            <input:AdvancedEntry.Validations>
+                                <validation:RequiredValidation Message="Please Enter Password"></validation:RequiredValidation>
+                            </input:AdvancedEntry.Validations>
+                        </input:AdvancedEntry>
+                        <input:AdvancedEntry Title="Confirm Password" IsPassword="True" Grid.Row="7" Spacing="10"  Grid.ColumnSpan="2" BackgroundColor="Transparent">
+                            <input:AdvancedEntry.Validations>
+                                <validation:RequiredValidation Message="Please Enter Password"></validation:RequiredValidation>
+                            </input:AdvancedEntry.Validations>
+                        </input:AdvancedEntry>
+                        <Button input:FormView.IsSubmitButton="True" FontSize="16" Text="Save" Grid.Row="8" Grid.ColumnSpan="2" BackgroundColor="#ec7495" Margin="15" WidthRequest="120"></Button>
+                    </input:FormView>
+
+                </Grid>
+                <Frame.Shadow>
+                    <Shadow Opacity="0.9"></Shadow>
+                </Frame.Shadow>
+            </Frame>
+        </Grid>
+    </ScrollView>
+</ContentPage>
