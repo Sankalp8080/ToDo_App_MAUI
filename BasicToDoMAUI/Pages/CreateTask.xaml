@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BasicToDoMAUI.Pages.CreateTask"
+             Title="CreateTask"
+             xmlns:input="clr-namespace:InputKit.Shared.Controls;assembly=InputKit.Maui"
+             xmlns:validation="clr-namespace:InputKit.Shared.Validations;assembly=InputKit.Maui"
+             xmlns:material="http://schemas.enisn-projects.io/dotnet/maui/uraniumui/material"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             xmlns:m="clr-namespace:UraniumUI.Icons.MaterialIcons;assembly=UraniumUI.Icons.MaterialIcons"
+
+>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Frame" x:Key="ProfileFrame">
+                <Setter Property="BackgroundColor" Value="#e93737"></Setter>
+                <Setter Property="HeightRequest" Value="210"></Setter>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ScrollView>
+        <Grid Margin="20">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Frame Grid.Row="0" Style="{StaticResource ProfileFrame}" Grid.ColumnSpan="2">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Frame HasShadow="True" CornerRadius="120" Grid.RowSpan="2" Grid.Column="0" WidthRequest="140" BackgroundColor="#f3f4f8">
+                        <Image Source="add.png" Aspect="AspectFit" HeightRequest="160" HorizontalOptions="Center" ></Image>
+                        <Frame.Shadow>
+                            <Shadow Opacity="0.9"></Shadow>
+                        </Frame.Shadow>
+                    </Frame>
+                    <Label Text="Create a New Task" Grid.RowSpan="2" FontSize="Medium" FontAttributes="Bold" Grid.Row="0" TextColor="#f3f4f8" VerticalOptions="Center" Grid.Column="1"></Label>
+
+
+                </Grid>
+                <Frame.Shadow>
+                    <Shadow Opacity="0.9"></Shadow>
+                </Frame.Shadow>
+            </Frame>
+            <Frame x:Name="signupFrame" BackgroundColor="White" CornerRadius="31" Margin="0,-15"  HasShadow="True" TranslationY="-23" BorderColor="Transparent" VerticalOptions="FillAndExpand" Grid.Row="1" Grid.ColumnSpan="2">
+                <Grid RowDefinitions="auto,auto,auto,auto,auto,auto,auto,auto,auto">
+
+                    <input:FormView Grid.Row="1" Grid.ColumnSpan="2" Spacing="15" >
+                        <input:AdvancedEntry Title="Add a Task" Grid.Row="2" Grid.ColumnSpan="2" Spacing="10" BackgroundColor="Transparent" Placeholder="Add a Task">
+                            <input:AdvancedEntry.Validations>
+                                <validation:RequiredValidation Message="Please Enter Username"></validation:RequiredValidation>
+                            </input:AdvancedEntry.Validations>
+                        </input:AdvancedEntry>
+                        <material:DatePickerField Title="Pick a date" 
+                                             AllowClear="True" 
+                                            Icon="{FontImageSource FontFamily=MaterialRegular, Glyph={x:Static m:MaterialRegular.Calendar_month}}">
+                            <validation:MinValueValidation MinValue="{Binding Source={x:Static sys:DateTime.Now},StringFormat='{0:dd MM YYYY}'}" Message="Please Select Proper date" />
+                        </material:DatePickerField>
+                        <material:TimePickerField Title="Select a Time">
+                        </material:TimePickerField>
+                        <material:PickerField 
+                                Title="Select Priority"                                
+                                AllowClear="True">
+                            <material:PickerField.ItemsSource>
+                                <x:Array Type="{x:Type x:String}">
+                                    <x:String>High</x:String>
+                                    <x:String>Medium</x:String>
+                                    <x:String>Low</x:String>
+                                </x:Array>
+                            </material:PickerField.ItemsSource>
+
+                        </material:PickerField>
+                        <Button input:FormView.IsSubmitButton="True" FontSize="16" Text="Create" Grid.Row="8" Grid.ColumnSpan="2" BackgroundColor="#e93737" Margin="15" WidthRequest="120"></Button>
+                    </input:FormView>
+
+                </Grid>
+                <Frame.Shadow>
+                    <Shadow Opacity="0.9"></Shadow>
+                </Frame.Shadow>
+            </Frame>
+        </Grid>
+    </ScrollView>
+</ContentPage>

@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 using UraniumUI;
+using FontAwesome5;
 
 namespace BasicToDoMAUI
 {
@@ -17,6 +18,8 @@ namespace BasicToDoMAUI
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                     fonts.AddFontAwesomeIconFonts();
+                    fonts.AddMaterialIconFonts();
+
                 });
 
 #if DEBUG

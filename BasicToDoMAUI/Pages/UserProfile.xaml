@@ -72,14 +72,14 @@ xmlns:validation="clr-namespace:InputKit.Shared.Validations;assembly=InputKit.Ma
                                 <validation:RequiredValidation Message="Please Enter Last Name"></validation:RequiredValidation>
                             </input:AdvancedEntry.Validations>
                         </input:AdvancedEntry>
-                        <input:AdvancedEntry Title="Password" IsPassword="True" Grid.Row="6" Spacing="10"  Grid.ColumnSpan="2" BackgroundColor="Transparent">
+                        <input:AdvancedEntry Title="Old Password" IsPassword="True" Grid.Row="6" Spacing="10"  Grid.ColumnSpan="2" BackgroundColor="Transparent">
                             <input:AdvancedEntry.Validations>
-                                <validation:RequiredValidation Message="Please Enter Password"></validation:RequiredValidation>
+                                <validation:RequiredValidation Message="Please Enter Old Password"></validation:RequiredValidation>
                             </input:AdvancedEntry.Validations>
                         </input:AdvancedEntry>
-                        <input:AdvancedEntry Title="Confirm Password" IsPassword="True" Grid.Row="7" Spacing="10"  Grid.ColumnSpan="2" BackgroundColor="Transparent">
+                        <input:AdvancedEntry Title="New Password" IsPassword="True" Grid.Row="7" Spacing="10"  Grid.ColumnSpan="2" BackgroundColor="Transparent">
                             <input:AdvancedEntry.Validations>
-                                <validation:RequiredValidation Message="Please Enter Password"></validation:RequiredValidation>
+                                <validation:RequiredValidation Message="Please Enter New Password"></validation:RequiredValidation>
                             </input:AdvancedEntry.Validations>
                         </input:AdvancedEntry>
                         <Button input:FormView.IsSubmitButton="True" FontSize="16" Text="Save" Grid.Row="8" Grid.ColumnSpan="2" BackgroundColor="#ec7495" Margin="15" WidthRequest="120"></Button>
