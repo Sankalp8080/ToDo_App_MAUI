@@ -8,7 +8,7 @@ namespace BasicToDoMAUI
         {
             InitializeComponent();
 
-             MainPage = new CreateTask();
+             MainPage = new UserProfile();
           
         }
     }

@@ -57,6 +57,7 @@
                 </Frame.Shadow>
             </Frame>
             <Frame x:Name="signupFrame" BackgroundColor="White" CornerRadius="31" Margin="0,-15"  HasShadow="True" TranslationY="-23" BorderColor="Transparent" VerticalOptions="FillAndExpand" Grid.Row="1" Grid.ColumnSpan="2">
+
                 <Grid RowDefinitions="auto,auto,auto,auto,auto,auto,auto,auto,auto">
 
                     <input:FormView Grid.Row="1" Grid.ColumnSpan="2" Spacing="15" >
@@ -84,7 +85,11 @@
                             </material:PickerField.ItemsSource>
 
                         </material:PickerField>
-                        <Button input:FormView.IsSubmitButton="True" FontSize="16" Text="Create" Grid.Row="8" Grid.ColumnSpan="2" BackgroundColor="#e93737" Margin="15" WidthRequest="120"></Button>
+                        <Grid ColumnDefinitions="*,*">
+
+                            <Button input:FormView.IsSubmitButton="True" FontSize="16" Text="Create" Grid.Row="8" Grid.Column="0" BackgroundColor="#e93737" Margin="15" WidthRequest="120"></Button>
+                            <Button input:FormView.IsResetButton="True" FontSize="16" Text="Clear" Grid.Row="8" Grid.Column="1" BackgroundColor="#6a7efc" Margin="15" WidthRequest="120"></Button>
+                        </Grid>
                     </input:FormView>
 
                 </Grid>

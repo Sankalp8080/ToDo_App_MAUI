@@ -33,7 +33,7 @@ xmlns:validation="clr-namespace:InputKit.Shared.Validations;assembly=InputKit.Ma
 
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
-                         
+
                         <ColumnDefinition></ColumnDefinition>
                     </Grid.ColumnDefinitions>
                     <Frame CornerRadius="120" Grid.RowSpan="2" Grid.Column="0" WidthRequest="140" BackgroundColor="#f3f4f8">
@@ -42,7 +42,7 @@ xmlns:validation="clr-namespace:InputKit.Shared.Validations;assembly=InputKit.Ma
                             <Shadow Opacity="0.9"></Shadow>
                         </Frame.Shadow>
                     </Frame>
-                    
+
                 </Grid>
                 <Frame.Shadow>
                     <Shadow Opacity="0.9"></Shadow>
@@ -82,7 +82,10 @@ xmlns:validation="clr-namespace:InputKit.Shared.Validations;assembly=InputKit.Ma
                                 <validation:RequiredValidation Message="Please Enter New Password"></validation:RequiredValidation>
                             </input:AdvancedEntry.Validations>
                         </input:AdvancedEntry>
-                        <Button input:FormView.IsSubmitButton="True" FontSize="16" Text="Save" Grid.Row="8" Grid.ColumnSpan="2" BackgroundColor="#ec7495" Margin="15" WidthRequest="120"></Button>
+                        <Grid ColumnDefinitions="*,*">
+                            <Button input:FormView.IsSubmitButton="True" FontSize="16" Text="Save" Grid.Row="8" Grid.Column="0" BackgroundColor="#ec7495" Margin="15" WidthRequest="120"></Button>
+                            <Button FontSize="16" Text="Cancel" Grid.Row="8"   Grid.Column="1" BackgroundColor="#6a7efc" Margin="15" WidthRequest="120"></Button>
+                        </Grid>
                     </input:FormView>
 
                 </Grid>
