@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BasicToDoMAUI.Pages.Home"
+             Title="Home"
+             xmlns:material="http://schemas.enisn-projects.io/dotnet/maui/uraniumui/material"
+             xmlns:uranium="http://schemas.enisn-projects.io/dotnet/maui/uraniumui"
+             xmlns:fa="clr-namespace:UraniumUI.Icons.FontAwesome;assembly=UraniumUI.Icons.FontAwesome"
+              xmlns:m="clr-namespace:UraniumUI.Icons.MaterialIcons;assembly=UraniumUI.Icons.MaterialIcons"
+             >
+    <ScrollView>
+        <Grid Margin="20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Label Text="All Task" FontSize="Large" FontAttributes="Bold" Grid.Row="0" Grid.Column="0" HorizontalOptions="Center" Grid.ColumnSpan="3"></Label>
+            <Image Grid.Row="1" Grid.Column="0" HeightRequest="24" WidthRequest="24" >
+                
+            </Image>
+            <SearchBar Placeholder="Search..." x:Name="searchBar" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" WidthRequest="300" HorizontalOptions="CenterAndExpand"/>
+        </Grid>
+    </ScrollView>
+</ContentPage>
