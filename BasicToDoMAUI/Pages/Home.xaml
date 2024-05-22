@@ -9,7 +9,7 @@
               xmlns:m="clr-namespace:UraniumUI.Icons.MaterialIcons;assembly=UraniumUI.Icons.MaterialIcons"
              >
     <ScrollView>
-        <Grid Margin="20">
+        <Grid Margin="10">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
@@ -25,11 +25,24 @@
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
-            <Label Text="All Task" FontSize="Large" FontAttributes="Bold" Grid.Row="0" Grid.Column="0" HorizontalOptions="Center" Grid.ColumnSpan="3"></Label>
-            <Image Grid.Row="1" Grid.Column="0" HeightRequest="24" WidthRequest="24" >
-                
-            </Image>
-            <SearchBar Placeholder="Search..." x:Name="searchBar" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" WidthRequest="300" HorizontalOptions="CenterAndExpand"/>
+            <Label Text="All Task" FontSize="Large" FontAttributes="Bold" Grid.Row="0" HorizontalOptions="Center" Grid.ColumnSpan="3"></Label>
+            <Image Grid.Row="1" Grid.Column="0" HeightRequest="24" WidthRequest="24" Source="menu.png" HorizontalOptions="Start" Margin="10,-50,0,0"/>
+            <SearchBar Placeholder="Search..." x:Name="searchBar" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" WidthRequest="400" HorizontalOptions="CenterAndExpand"/>
+            <Label Text="Today" FontSize="Medium"  Grid.Row="2" Grid.Column="0" Margin="10,-50,0,0"></Label>
+            <Frame Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3"  CornerRadius="16">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.1"></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.3"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Rectangle BackgroundColor="Red" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"   HeightRequest="50" Fill="Red"   ZIndex="1" VerticalOptions="Start" ></Rectangle>
+                </Grid>
+            </Frame>
         </Grid>
     </ScrollView>
 </ContentPage>
