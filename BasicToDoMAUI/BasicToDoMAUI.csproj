@@ -92,4 +92,6 @@
 	  </MauiXaml>
 	</ItemGroup>
 
+	<ProjectExtensions><VisualStudio><UserProperties XamarinHotReloadUnhandledDeviceExceptionBasicToDoMAUIHideInfoBar="True" /></VisualStudio></ProjectExtensions>
+
 </Project>

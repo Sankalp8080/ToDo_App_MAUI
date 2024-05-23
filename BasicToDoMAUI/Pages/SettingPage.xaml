@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BasicToDoMAUI.Pages.SettingPage"
              xmlns:fa="clr-namespace:UraniumUI.Icons.FontAwesome;assembly=UraniumUI.Icons.FontAwesome"
-             Title="SettingPage">
+             Title="Setting">
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style TargetType="Frame" x:Key="ProfileFrame">
