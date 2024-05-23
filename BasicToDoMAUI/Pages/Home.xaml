@@ -9,40 +9,138 @@
               xmlns:m="clr-namespace:UraniumUI.Icons.MaterialIcons;assembly=UraniumUI.Icons.MaterialIcons"
              >
     <ScrollView>
-        <Grid Margin="10">
+        <Grid Margin="20" RowSpacing="10">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
 
             <Grid.RowDefinitions>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
             </Grid.RowDefinitions>
-            <Label Text="All Task" FontSize="Large" FontAttributes="Bold" Grid.Row="0" HorizontalOptions="Center" Grid.ColumnSpan="3"></Label>
-            <Image Grid.Row="1" Grid.Column="0" HeightRequest="24" WidthRequest="24" Source="menu.png" HorizontalOptions="Start" Margin="10,-50,0,0"/>
-            <SearchBar Placeholder="Search..." x:Name="searchBar" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" WidthRequest="400" HorizontalOptions="CenterAndExpand"/>
-            <Label Text="Today" FontSize="Medium"  Grid.Row="2" Grid.Column="0" Margin="10,-50,0,0"></Label>
-            <Frame Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3"  CornerRadius="16">
+
+            <Label Text="All Task" FontSize="28" FontAttributes="Bold" Grid.Row="0" HorizontalOptions="Center" Grid.ColumnSpan="3" Padding="0,0,10,0"></Label>
+            <Image Grid.Row="1"  Grid.Column="0" HeightRequest="24" WidthRequest="24" Source="menu.png" HorizontalOptions="Start">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"></TapGestureRecognizer>
+                </Image.GestureRecognizers>
+            </Image>
+            <Frame Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" CornerRadius="15" Padding="0" IsClippedToBounds="True" WidthRequest="400" >
+                <SearchBar Margin="0" Placeholder="Search..." BackgroundColor="#ffffff"  FontSize="18" x:Name="searchBar" WidthRequest="400" />
+            </Frame>
+            <Label Text="Today" Padding="0,20,0,0" FontSize="20" FontAttributes="Bold" Grid.Row="2" Grid.Column="0"></Label>
+            <Frame Grid.Row="3" BackgroundColor="#ffffff" Grid.Column="0" Grid.ColumnSpan="3" CornerRadius="16" Padding="0"  >
                 <Grid>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="0.1"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
                         <RowDefinition></RowDefinition>
                         <RowDefinition></RowDefinition>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="0.3"></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
                         <ColumnDefinition Width="*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
-                    <Rectangle BackgroundColor="Red" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"   HeightRequest="50" Fill="Red"   ZIndex="1" VerticalOptions="Start" ></Rectangle>
+                    <Rectangle Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" WidthRequest="430" HeightRequest="15" RadiusX="8" RadiusY="8" Fill="Red"></Rectangle>
+                    <material:CheckBox Grid.Row="1" Grid.RowSpan="2" Grid.Column="0" TextFontSize="12" Padding="10"></material:CheckBox>
+                    <Label Text="Finish Study" FontSize="16" Grid.Row="1" FontAttributes="Bold" Grid.Column="1" Padding="5"></Label>
+                    <Label Text="25/05/2024" FontSize="14" Grid.Row="2" Grid.Column="1" Padding="5"></Label>
                 </Grid>
             </Frame>
+
+            <Frame Grid.Row="4" BackgroundColor="#ffffff" Grid.Column="0" Grid.ColumnSpan="3" CornerRadius="16" Padding="0"  >
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Rectangle Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" WidthRequest="430" HeightRequest="15" RadiusX="8" RadiusY="8" Fill="Orange"></Rectangle>
+                    <material:CheckBox Grid.Row="1" Grid.RowSpan="2" Grid.Column="0" TextFontSize="12" Padding="10"></material:CheckBox>
+                    <Label Text="Watch Movie" FontSize="16" Grid.Row="1" FontAttributes="Bold" Grid.Column="1" Padding="5"></Label>
+                    <Label Text="25/05/2024" FontSize="14" Grid.Row="2" Grid.Column="1" Padding="5"></Label>
+                </Grid>
+            </Frame>
+            <Frame Grid.Row="5" BackgroundColor="#ffffff" Grid.Column="0" Grid.ColumnSpan="3" CornerRadius="16" Padding="0"  >
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Rectangle Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" WidthRequest="430" HeightRequest="15" RadiusX="8" RadiusY="8" Fill="Green"></Rectangle>
+                    <material:CheckBox Grid.Row="1" Grid.RowSpan="2" Grid.Column="0" TextFontSize="12" Padding="10"></material:CheckBox>
+                    <Label Text="Go to Shopping" FontSize="16" Grid.Row="1" FontAttributes="Bold" Grid.Column="1" Padding="5"></Label>
+                    <Label Text="25/05/2024" FontSize="14" Grid.Row="2" Grid.Column="1" Padding="5"></Label>
+                </Grid>
+            </Frame>
+            <Label Text="Soon" FontAttributes="Bold" FontSize="20" Padding="0,20,0,0" Grid.Row="6" Grid.Column="0"></Label>
+            <Frame Grid.Row="7" BackgroundColor="#ffffff" Grid.Column="0" Grid.ColumnSpan="3" CornerRadius="16" Padding="0"  >
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Rectangle Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" WidthRequest="430" HeightRequest="15" RadiusX="8" RadiusY="8" Fill="Orange"></Rectangle>
+                    <material:CheckBox Grid.Row="1" Grid.RowSpan="2" Grid.Column="0" TextFontSize="12" Padding="10"></material:CheckBox>
+                    <Label Text="Watch Movie" FontSize="16" Grid.Row="1" FontAttributes="Bold" Grid.Column="1" Padding="5"></Label>
+                    <Label Text="30/05/2024" FontSize="14" Grid.Row="2" Grid.Column="1" Padding="5"></Label>
+                </Grid>
+            </Frame>
+
+            <Frame Grid.Row="8" BackgroundColor="#ffffff" Grid.Column="0" Grid.ColumnSpan="3" CornerRadius="16" Padding="0"  >
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Rectangle Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" WidthRequest="430" HeightRequest="15" RadiusX="8" RadiusY="8" Fill="Red"></Rectangle>
+                    <material:CheckBox Grid.Row="1" Grid.RowSpan="2" Grid.Column="0" TextFontSize="12" Padding="10"></material:CheckBox>
+                    <Label Text="Exam Preperation" FontSize="16" Grid.Row="1" FontAttributes="Bold" Grid.Column="1" Padding="5"></Label>
+                    <Label Text="02/06/2024" FontSize="14" Grid.Row="2" Grid.Column="1" Padding="5"></Label>
+                </Grid>
+            </Frame>
+
+
+            <Button Grid.Row="11"  Grid.Column="3" WidthRequest="60" HeightRequest="60" CornerRadius="30"
+            BackgroundColor="#6a7efc" 
+            Text="+" 
+            FontSize="Large"
+            TextColor="White"
+            HorizontalOptions="End" 
+            VerticalOptions="Center"
+                    Clicked="Button_Clicked"
+              />
         </Grid>
+
     </ScrollView>
 </ContentPage>

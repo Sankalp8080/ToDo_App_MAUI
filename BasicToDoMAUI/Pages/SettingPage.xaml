@@ -49,35 +49,44 @@
                     <Shadow Opacity="0.9"></Shadow>
                 </Frame.Shadow>
             </Frame>
-            
-             
-                
-                <Frame HeightRequest="100" BackgroundColor="Transparent"  Grid.Row="1" Grid.ColumnSpan="2" BorderColor="Transparent">
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition></RowDefinition>
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="40"></ColumnDefinition>
-                            <ColumnDefinition Width="*"></ColumnDefinition>
-                        </Grid.ColumnDefinitions>
-                        <ImageButton HeightRequest="50" HorizontalOptions="Start" Grid.Row="0" Grid.Column="0">
-                            <ImageButton.Source>
-                                <FontImageSource FontFamily="FASolid" Glyph="{x:Static fa:Solid.Gear}" Color="Black" ></FontImageSource>
-                            </ImageButton.Source>
-                        </ImageButton>
-                        <Label Grid.Column="1" Grid.Row="0" Text="Edit Profile" HorizontalOptions="Center" VerticalTextAlignment="Center" FontSize="Medium"></Label>
-                    </Grid>
 
-                </Frame>
-                <ImageButton HeightRequest="50" HorizontalOptions="Center" Grid.Row="3" Grid.ColumnSpan="2">
-                    <ImageButton.Source>
-                        <FontImageSource FontFamily="FASolid" Glyph="{x:Static fa:Solid.RightFromBracket}" Color="Black" ></FontImageSource>
-                    </ImageButton.Source>
-                </ImageButton>
-             
-            
-           
+
+
+            <Frame HeightRequest="100" BackgroundColor="Transparent"  Grid.Row="1" Grid.ColumnSpan="2" BorderColor="Transparent">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="40"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <ImageButton HeightRequest="50" HorizontalOptions="Start" Grid.Row="0" Grid.Column="0">
+                        <ImageButton.Source>
+                            <FontImageSource FontFamily="FASolid" Glyph="{x:Static fa:Solid.Gear}" Color="Black" ></FontImageSource>
+                        </ImageButton.Source>
+                    </ImageButton>
+                    <Label Grid.Column="1" Grid.Row="0" Text="Edit Profile" HorizontalOptions="Center" VerticalTextAlignment="Center" FontSize="Medium">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped">
+
+                            </TapGestureRecognizer>
+                        </Label.GestureRecognizers>
+                    </Label>
+                </Grid>
+
+            </Frame>
+            <ImageButton HeightRequest="50" HorizontalOptions="Center" Grid.Row="3" Grid.ColumnSpan="2">
+                <ImageButton.Source>
+                    <FontImageSource FontFamily="FASolid" Glyph="{x:Static fa:Solid.RightFromBracket}" Color="Black" ></FontImageSource>
+                </ImageButton.Source>
+                <ImageButton.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1"></TapGestureRecognizer>
+                </ImageButton.GestureRecognizers>
+            </ImageButton>
+
+
+
         </Grid>
     </ScrollView>
 </ContentPage>

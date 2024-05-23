@@ -8,7 +8,7 @@ namespace BasicToDoMAUI
         {
             InitializeComponent();
 
-             MainPage = new Home();
+            MainPage=new NavigationPage(new Home());
           
         }
     }

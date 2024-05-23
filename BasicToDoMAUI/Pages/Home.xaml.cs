@@ -6,4 +6,14 @@ public partial class Home : ContentPage
 	{
 		InitializeComponent();
 	}
+
+    private void Button_Clicked(object sender, EventArgs e)
+    {
+		Navigation.PushAsync(new CreateTask());
+    }
+
+    private void TapGestureRecognizer_Tapped(object sender, TappedEventArgs e)
+    {
+        Navigation.PushAsync(new SettingPage());
+    }
 }
